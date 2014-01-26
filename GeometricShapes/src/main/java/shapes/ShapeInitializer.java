@@ -12,7 +12,7 @@ public static GeometricShape getShape(String name) {
     Object obj = null;
     Class c;
     try {
-        c = Class.forName(name);
+        c = Class.forName("shapes." + name);
 //        Class[] paramTypes = new Class[] {};
         Constructor constructor = c.getConstructor(/*paramTypes*/);
         obj = constructor.newInstance();
