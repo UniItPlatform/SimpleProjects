@@ -8,7 +8,7 @@ public class Parallelogram extends Rectangle {
     protected float angle;
 
     public Parallelogram() {
-        angle = 15;
+        angle = 15; // default angle
     }
 
     public Parallelogram(float width, float height, float angle) {
