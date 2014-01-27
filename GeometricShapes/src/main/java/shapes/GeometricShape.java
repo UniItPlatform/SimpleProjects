@@ -10,8 +10,8 @@ abstract public class GeometricShape {
     protected float height;
 
     public GeometricShape() {
-        width = 0;
-        height = 0;
+        width = 100;
+        height = 100;
         rotation = 0;
     }
 
