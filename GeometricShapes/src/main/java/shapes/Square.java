@@ -22,4 +22,5 @@ public class Square extends Rectangle {
          this.width = height;
          this.height = height;
      }
+
 }

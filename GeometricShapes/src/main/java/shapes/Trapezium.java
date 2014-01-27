@@ -23,4 +23,12 @@ public class Trapezium extends Rectangle {
     public void setSmallerSideWidth(float smallerSideWidth) {
         this.smallerSideWidth = smallerSideWidth;
     }
+
+    @Override
+    public String toString() {
+        String str = super.toString();
+        str += " smallerSideWidth=" + smallerSideWidth;
+        return str;
+    }
+
 }

@@ -5,7 +5,7 @@ package shapes;
  */
 public class Program {
     public static void main(String args[]) {
-        String name = "Square";
+        String name = "Triangle";
         GeometricShape gs = ShapeInitializer.getShape(name);
         System.out.println(gs.toString());
     }

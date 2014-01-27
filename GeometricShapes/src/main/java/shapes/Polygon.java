@@ -23,4 +23,11 @@ public class Polygon extends Rectangle {
     public void setNumberOfSides(int numberOfSides) {
         this.numberOfSides = numberOfSides;
     }
+
+    @Override
+    public String toString() {
+        String str = super.toString();
+        str += " numberOfSides=" + numberOfSides;
+        return str;
+    }
 }

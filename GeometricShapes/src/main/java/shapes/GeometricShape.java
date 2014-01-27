@@ -23,4 +23,12 @@ abstract public class GeometricShape {
         rotation %= 360;
         this.rotation = rotation > 180 ? -rotation  + 180 : rotation < -180 ? -rotation - 180 : rotation;
     }
+
+    @Override
+    public String toString() {
+        String str = this.getClass().getSimpleName() + ":";
+        str += " width=" + width + " height=" + height + " rotation=" + rotation;
+        return str;
+    }
+
 }

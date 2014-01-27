@@ -23,4 +23,11 @@ public class Parallelogram extends Rectangle {
     public void setAngle(float angle) {
         this.angle = angle;
     }
+
+    @Override
+    public String toString() {
+        String str = super.toString();
+        str += " angle=" + angle;
+        return str;
+    }
 }
