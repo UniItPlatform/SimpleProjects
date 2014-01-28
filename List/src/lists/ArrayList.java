@@ -4,22 +4,22 @@ import java.util.Iterator;
 
 public class ArrayList<T> implements List<T>, Iterable<T>{
 
-	private static final int START_SIZE = 5;
+	private static final int START_SIZE = 5; //default array size
 	
 	private static final int INDEX_NOT_FOUND = -1;
 	private static final String BAD_INDEX = "Index is bad!";
 	private static final String EMPTY_LIST = "List is empty!";
 	
-	private int size = START_SIZE; //текущий размер массива
-	private int count = 0; 		   //количество не null элементов		
+	private int size = START_SIZE
+	private int count = 0; 		   //count of not-null elements
 	
-	private Object[] datas;		   //массив элементов, нумерация элементов в списке с 0!!
+	private Object[] datas;		   //our array
 	
 	@Override
-    public int getCount() {
-    	//свойство readonly, чтобы пользователь мог узнать кол-во элементов
-    	return count;
-    }
+    	public int getCount() {
+    		//readonly property; user should be able to get the elements count
+    		return count;
+    	}
 	
 	public ArrayList() {
 		createAndAssingByNull();
@@ -46,7 +46,7 @@ public class ArrayList<T> implements List<T>, Iterable<T>{
 	}
 	
 	private void expandSize() {
-		//увеличение размера массива вдвое 
+		//expand array size by 2 times, if it full
 		Object[] help_array = new Object[size];
 		for (int i = 0; i < size; i++)
 			help_array[i] = datas[i];
@@ -58,12 +58,12 @@ public class ArrayList<T> implements List<T>, Iterable<T>{
 			datas[i] = help_array[i];		
 	}
 	private void shiftElementsRight(int start_index) {
-		//сдвиг вправо для вставки элемента
+		//shift elements to insert new element
 		for (int i = count; i > start_index; i--) 
 			datas[i] = datas[i - 1];			
 	}
 	private void shiftElementsLeft(int start_index) {
-		//сдвиг влево для удаления элемента
+		//to delete the element
 		for (int i = start_index; i < count - 1; i++)
 			datas[i] = datas[i + 1];
 	}
@@ -104,6 +104,11 @@ public class ArrayList<T> implements List<T>, Iterable<T>{
 		shiftElementsRight(index);
 		datas[index] = data;
 		count++;
+	}
+	
+	public void add(T data) {
+		//the java ArrayList has the method "add", so I think, i too need to add it to my ArrayList
+		insertFront(data);
 	}
 
 	@Override
