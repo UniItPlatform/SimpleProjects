@@ -108,7 +108,7 @@ public class ArrayList<T> implements List<T>, Iterable<T>{
 	
 	public void add(T data) {
 		//the java ArrayList has the method "add", so I think, i too need to add it to my ArrayList
-		insertFront(data);
+		insertBack(data);
 	}
 
 	@Override
