@@ -21,4 +21,11 @@ public class Circle extends GeometricShape {
         this.width = radius * 2;
         this.height = radius * 2;
     }
+
+    @Override
+    public String toString() {
+        String str = super.toString();
+        str += " radius=" + getRadius();
+        return str;
+    }
 }

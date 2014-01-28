@@ -5,14 +5,14 @@ package shapes;
  */
 abstract public class GeometricShape {
 
-    private float rotation;
+    private float rotation; // -180ª ≤ angle ≤ 180ª
     protected float width;
     protected float height;
 
     public GeometricShape() {
-        width = 0;
-        height = 0;
-        rotation = 0;
+        width = 100; // default value
+        height = 100; // default value
+        rotation = 0; // default value
     }
 
     public float getRotation() {
@@ -20,6 +20,15 @@ abstract public class GeometricShape {
     }
 
     public void setRotation(float rotation) {
-        this.rotation = rotation % 180;
+        rotation %= 360;
+        this.rotation = rotation > 180 ? -rotation  + 180 : rotation < -180 ? -rotation - 180 : rotation;
     }
+
+    @Override
+    public String toString() {
+        String str = this.getClass().getSimpleName() + ":";
+        str += " width=" + width + " height=" + height + " rotation=" + rotation;
+        return str;
+    }
+
 }

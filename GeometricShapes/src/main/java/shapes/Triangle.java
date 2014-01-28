@@ -18,6 +18,13 @@ public class Triangle extends GeometricShape {
     private float[] pointsYCoordinates = new float[numVertices];
 
     public Triangle() {
+        // by default it is a round triangle with the round corner in the top left corner
+        pointsXCoordinates[0] = 0;
+        pointsYCoordinates[0] = 0;
+        pointsXCoordinates[1] = width;
+        pointsYCoordinates[1] = 0;
+        pointsXCoordinates[2] = 0;
+        pointsYCoordinates[2] = height;
     }
 
     public Triangle(float width, float height, roundTriangleCornerOrientation orientation) {
@@ -97,5 +104,19 @@ public class Triangle extends GeometricShape {
         }
         this.width = maxX - minX;
         this.height = maxY - minY;
+    }
+
+    @Override
+    public String toString() {
+        String str = super.toString();
+        str += " points=[";
+        for (int i = 0; i < numVertices; i++) {
+            str += "(" + pointsXCoordinates[i] + ", " + pointsYCoordinates[i] + ")";
+            if (i + 1 < numVertices) {
+                str += ", ";
+            }
+        }
+        str += "]";
+        return str;
     }
 }

@@ -8,11 +8,7 @@ public class Polygon extends Rectangle {
     protected int numberOfSides;
 
     public Polygon() {
-        numberOfSides = 6;
-    }
-
-    public Polygon(int numberOfSides) {
-        this.numberOfSides = numberOfSides;
+        numberOfSides = 5; // pentagon
     }
 
     public Polygon(float width, float height, int numberOfSides) {
@@ -26,5 +22,12 @@ public class Polygon extends Rectangle {
 
     public void setNumberOfSides(int numberOfSides) {
         this.numberOfSides = numberOfSides;
+    }
+
+    @Override
+    public String toString() {
+        String str = super.toString();
+        str += " numberOfSides=" + numberOfSides;
+        return str;
     }
 }
