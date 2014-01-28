@@ -1,6 +1,12 @@
 import java.net.URLEncoder;
 
 public class Fill {
+    /**
+     * method arr fills the matrix numbers if all the word is found in the text,
+     * the last character of the word in the matrix is set equal to the length of the word.
+     * @param pat word which  looking for
+     * @param dfa matrix  the length 256 and wordlength "pat"
+     */
     void arr(String pat,int [][]dfa)
     {
         int M=pat.length();

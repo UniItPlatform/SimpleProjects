@@ -1,6 +1,12 @@
 import java.util.Scanner;
+import java.io.*;
 
-
+/**
+ *Show the position the word in the text
+ * pat - word which  looking for
+ * dfa - matrix  the length 256 and wordlength "pat"
+ * lg  - array length of the text
+ */
 public class KMP {
 
     public static String pat;
@@ -11,18 +17,15 @@ public class KMP {
 
         System.out.println("Введите текст!");
         Scanner scan = new Scanner(System.in);
-        String txt = scan.nextLine();
+        String text = scan.nextLine();
         System.out.println("Введите слово,которое надо найти!");
         pat = scan.nextLine();
-        //Создаем массивы
         dfa=new int[256][pat.length()];
-        lg=new int[txt.length()];
-        //Вызываем функции
+        lg=new int[text.length()];
         Fill fill=new Fill();
         fill.arr(pat,dfa);
         Search search=new Search();
-        lg=search.show(txt,pat,dfa);
-        //Вывод на экран
+        lg=search.show(text,pat,dfa);
         for(int i=0;i<lg.length;i++)
             if(lg[i]==1)
                 System.out.print(i+" ");

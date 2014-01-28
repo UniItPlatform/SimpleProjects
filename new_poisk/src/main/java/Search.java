@@ -1,6 +1,14 @@
-
+/**
+ *
+ */
 public class Search {
-
+    /**
+     * show returns array to display what positions found words in the text
+     * @param txt text
+     * @param pat word which  looking for
+     * @param dfa matrix  the length 256 and wordlength "pat"
+     * @return lg array
+     */
         public int[] show(String txt,String pat,int [][]dfa)
         {
             int i,j,N=txt.length(),M=pat.length();
