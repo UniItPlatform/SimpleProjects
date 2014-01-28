@@ -10,16 +10,16 @@ public class LinkedList<T> implements List<T>, Iterable<T>{
 	private static final int INDEX_NOT_FOUND = -1;
 	
     private class Refer {
-        //класс узла списка
+        //class of List node
         public T data;
         public Refer previous;
         public Refer next;
         
         /*
-         * сознательно не пишу геттеры и прочее, так этот класс используетс€ только
-         * во внешнем классе, и геттеры ухудшают читабельность - сравнить:
+         * I don't write setters and getters, because this class is used only in the external class,
+         * it makes code less readable, you can compare:
          * element1.next.previous = element2  --- element1.getNext().setPrevious(element2)
-         * здесь инкапслул€ци€ излишне имхо
+         * incapsulation isn't need here, I think
          */
 
         public Refer(T data)
@@ -29,13 +29,13 @@ public class LinkedList<T> implements List<T>, Iterable<T>{
     
     }
     
-    private Refer first_element; //первый элемент списка
-    private Refer last_element;	 //последний элемент списка
-    private int count;			 //количество элементов в списке, нумераци€ идет с 1!!!
+    private Refer first_element; 
+    private Refer last_element;	
+    private int count;			 //the first element has index 1!!!, it's important, for ex ArrayList starts by 0
     
     @Override
     public int getCount() {
-    	//свойство readonly, чтобы пользователь мог узнать кол-во элементов
+    	//readonly property; user should be able to get the elements count
     	return count;
     }
 
@@ -58,7 +58,7 @@ public class LinkedList<T> implements List<T>, Iterable<T>{
             throw new Exception("index is bad");
     	
     	Refer current;
-    	//смотрим, откуда выгоднее идти: с конца списка или из начала
+    	//that way is shorter, from the begining or from the end?
         if (index < count / 2) {
         	current = first_element;
 	        for (int i = 2; i <= index; i++)
@@ -219,7 +219,7 @@ public class LinkedList<T> implements List<T>, Iterable<T>{
 		return new ListIterator();
 	}
 	
-	//пс, не хочешь немного итерабельности?
+	//oh, it's so boring, lets realize the Iterator
 	private class ListIterator implements Iterator<T> {
 		
 		private int i = 0;
