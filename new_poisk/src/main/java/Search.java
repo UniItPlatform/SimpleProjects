@@ -1,6 +1,4 @@
-/**
- *
- */
+
 public class Search {
     /**
      * show returns array to display what positions found words in the text
