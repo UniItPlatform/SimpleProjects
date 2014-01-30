@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * Enter the operation you want to perform and execute the method Compress or Decompress
+ *Enter the operation you want to perform and execute the method Compress or Decompress
  */
 public class Archivator {
 
