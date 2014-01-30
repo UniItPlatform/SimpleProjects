@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * Enter the operation you want to perform and execute the method Compress or Decompress
+ */
 public class Archivator {
 
     public static String change_text;

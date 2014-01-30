@@ -1,6 +1,10 @@
 
 public class Arch_Decompr {
-
+    /**
+     * Decompress method. if is found number - N, N is recorded after the number of characters
+     * @param decompr_text text which should be decompressed
+     * @return Decompressed text
+     */
     public String Decompress(String decompr_text)
     {
         char p,c;

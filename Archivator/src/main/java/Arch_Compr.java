@@ -1,6 +1,11 @@
 
 public class Arch_Compr {
 
+    /**
+     * Compress method. If is found the same symbols in a row, the number of records and symbol
+     * @param compr_text  text which should be compressed
+     * @return compressed text
+     */
     public String Compress(String compr_text)
     {
         int i,j = 1;
