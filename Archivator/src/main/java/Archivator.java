@@ -5,36 +5,36 @@ import java.util.Scanner;
  */
 public class Archivator {
 
-    public static String change_text;
+    public static String ChangeText;
 
     public static void main(String[] args) {
         System.out.println("1.Compress");
         System.out.println("2.Decompress");
         System.out.println("Enter the operation you want to perform!");
-        Scanner scan1 = new Scanner(System.in);
-        String oper = scan1.nextLine();
-        if(oper.equals("Compress"))
+        Scanner Scan1 = new Scanner(System.in);
+        String Oper = Scan1.nextLine();
+        if(Oper.equals("Compress"))
         {
             System.out.println("Enter the text!");
-            Scanner scan2 = new Scanner(System.in);
-            String text = scan2.nextLine();
-            Arch_Compr Arch_c = new Arch_Compr();
-            change_text = Arch_c.Compress(text);
+            Scanner Scan2 = new Scanner(System.in);
+            String text = Scan2.nextLine();
+            ArchCompr ArchC = new ArchCompr();
+            ChangeText = ArchC.Compress(text);
         }
         else
-            if(oper.equals("Decompress"))
+            if(Oper.equals("Decompress"))
             {
                 System.out.println("Enter the text!");
-                Scanner scan2 = new Scanner(System.in);
-                String text = scan2.nextLine();
-                Arch_Decompr Arch_d = new Arch_Decompr();
-                change_text = Arch_d.Decompress(text);
+                Scanner Scan2 = new Scanner(System.in);
+                String text = Scan2.nextLine();
+                ArchDecompr ArchD = new ArchDecompr();
+                ChangeText = ArchD.Decompress(text);
             }
             else
             {
                 System.out.println("You have entered an incorrect operation!");
                 System.exit(0);
             }
-        System.out.println(change_text);
+        System.out.println(ChangeText);
     }
 }
