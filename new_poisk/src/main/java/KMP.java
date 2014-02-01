@@ -15,10 +15,10 @@ public class KMP {
 
     public static void main(String[] args) {
 
-        System.out.println("Введите текст!");
+        System.out.println("Enter the text!");
         Scanner scan = new Scanner(System.in);
         String text = scan.nextLine();
-        System.out.println("Введите слово,которое надо найти!");
+        System.out.println("Enter the word you want to find!");
         pat = scan.nextLine();
         dfa=new int[256][pat.length()];
         lg=new int[text.length()];
