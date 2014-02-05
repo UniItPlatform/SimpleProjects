@@ -5,10 +5,12 @@ package shapes;
  */
 public class Parallelogram extends Rectangle {
 
+    private final float DEFAULT_ANGLE = 15f;
+
     protected float angle;
 
     public Parallelogram() {
-        angle = 15; // default angle
+        angle = DEFAULT_ANGLE;
     }
 
     public Parallelogram(float width, float height, float angle) {
