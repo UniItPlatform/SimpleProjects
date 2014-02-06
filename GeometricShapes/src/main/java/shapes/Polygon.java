@@ -5,10 +5,12 @@ package shapes;
  */
 public class Polygon extends Rectangle {
 
+    private final int DEFAULT_NUM_OF_SIDES = 5; // pentagon
+
     protected int numberOfSides;
 
     public Polygon() {
-        numberOfSides = 5; // pentagon
+        numberOfSides = DEFAULT_NUM_OF_SIDES;
     }
 
     public Polygon(float width, float height, int numberOfSides) {

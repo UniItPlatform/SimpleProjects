@@ -5,10 +5,12 @@ package shapes;
  */
 public class Trapezium extends Rectangle {
 
+    private final float DEFAULT_TOPSIDE_SIZE_MULTIPLIER = 0.5f;
+
     protected float smallerSideWidth;
 
     public Trapezium() {
-        smallerSideWidth = width / 2;
+        smallerSideWidth = width * DEFAULT_TOPSIDE_SIZE_MULTIPLIER;
     }
 
     public Trapezium(float width, float height, float smallerSideWidth) {

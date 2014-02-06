@@ -5,7 +5,7 @@ package shapes;
  */
 public class Triangle extends GeometricShape {
 
-    protected static final int numVertices = 3;
+    protected static final int NUM_VERTICES = 3;
 
     public enum roundTriangleCornerOrientation {
         topleft,
@@ -14,8 +14,8 @@ public class Triangle extends GeometricShape {
         bottomright
     }
 
-    private float[] pointsXCoordinates = new float[numVertices];
-    private float[] pointsYCoordinates = new float[numVertices];
+    private float[] pointsXCoordinates = new float[NUM_VERTICES];
+    private float[] pointsYCoordinates = new float[NUM_VERTICES];
 
     public Triangle() {
         // by default it is a round triangle with the round corner in the top left corner
@@ -78,7 +78,7 @@ public class Triangle extends GeometricShape {
     }
 
     public void moveOrigin(float xOffset, float yOffset) {
-        for (int i = 0; i < numVertices; i++) {
+        for (int i = 0; i < NUM_VERTICES; i++) {
             pointsXCoordinates[i] += xOffset;
             pointsYCoordinates[i] += yOffset;
         }
@@ -88,7 +88,7 @@ public class Triangle extends GeometricShape {
         float minX, minY, maxX, maxY;
         minX = maxX = pointsXCoordinates[0];
         minY = maxY = pointsYCoordinates[0];
-        for (int i = 1; i < numVertices; i++) {
+        for (int i = 1; i < NUM_VERTICES; i++) {
             if (pointsXCoordinates[i] < minX) {
                 minX = pointsXCoordinates[i];
             }
@@ -110,9 +110,9 @@ public class Triangle extends GeometricShape {
     public String toString() {
         String str = super.toString();
         str += " points=[";
-        for (int i = 0; i < numVertices; i++) {
+        for (int i = 0; i < NUM_VERTICES; i++) {
             str += "(" + pointsXCoordinates[i] + ", " + pointsYCoordinates[i] + ")";
-            if (i + 1 < numVertices) {
+            if (i + 1 < NUM_VERTICES) {
                 str += ", ";
             }
         }

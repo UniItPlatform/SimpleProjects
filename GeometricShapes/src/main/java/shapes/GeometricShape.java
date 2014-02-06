@@ -5,14 +5,19 @@ package shapes;
  */
 abstract public class GeometricShape {
 
+    private final float DEFAULT_WIDTH = 100f;
+    private final float DEFAULT_HEIGHT = 100f;
+    private final float DEFAULT_ROTATION = 0f;
+    private final float ROTATION_BOUND = 180f;
+
     private float rotation; // -180ª ≤ angle ≤ 180ª
     protected float width;
     protected float height;
 
     public GeometricShape() {
-        width = 100; // default value
-        height = 100; // default value
-        rotation = 0; // default value
+        width = DEFAULT_WIDTH;
+        height = DEFAULT_HEIGHT;
+        rotation = DEFAULT_ROTATION;
     }
 
     public float getRotation() {
@@ -20,8 +25,8 @@ abstract public class GeometricShape {
     }
 
     public void setRotation(float rotation) {
-        rotation %= 360;
-        this.rotation = rotation > 180 ? -rotation  + 180 : rotation < -180 ? -rotation - 180 : rotation;
+        rotation %= ROTATION_BOUND * 2;
+        this.rotation = rotation > ROTATION_BOUND ? -rotation  + ROTATION_BOUND : rotation < -1 * ROTATION_BOUND ? -rotation -1 * ROTATION_BOUND : rotation;
     }
 
     @Override
