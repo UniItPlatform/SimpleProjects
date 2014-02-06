@@ -2,42 +2,42 @@
 public class ArchDecomprTest {
     /**
      * Decompress method. if is found number - N, N is recorded after the number of characters
-     * @param DecomprText text which should be decompressed
+     * @param decomprText text which should be decompressed
      * @return Decompressed text
      */
-    public String DecompressTest(String DecomprText)
+    public String DecompressTest(String decomprText)
     {
         char ch;
-        boolean RepChar = false;
-        int NumRepeat=1;
-        String ComprText = "";
-        for (int i=0;i<DecomprText.length();i++)
+        boolean repChar = false;
+        int numRepeat=1;
+        String comprText = "";
+        for (int i=0;i<decomprText.length();i++)
         {
-            ch = DecomprText.charAt(i);
+            ch = decomprText.charAt(i);
             if (ch > 47 && ch < 58 )
             {
-                if (RepChar)
+                if (repChar)
                 {
-                    NumRepeat = NumRepeat*10 + (int)(ch) - 48;
+                    numRepeat = numRepeat*10 + (int)(ch) - 48;
                 }
                 else
                 {
-                    NumRepeat = DecomprText.charAt(i) - 48;
-                    RepChar = true;
+                    numRepeat = decomprText.charAt(i) - 48;
+                    repChar = true;
                 }
             }
             else
             {
-                if (RepChar)
+                if (repChar)
                 {
-                    for (int k = 0;k < NumRepeat;k++)
-                        ComprText = ComprText + ch;
-                    RepChar = false;
+                    for (int k = 0;k < numRepeat;k++)
+                        comprText = comprText + ch;
+                    repChar = false;
                 }
                 else
-                    ComprText = ComprText + ch;
+                    comprText = comprText + ch;
             }
         }
-        return ComprText;
+        return comprText;
     }
 }

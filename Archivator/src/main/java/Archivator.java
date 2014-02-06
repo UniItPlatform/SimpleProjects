@@ -11,24 +11,24 @@ public class Archivator {
         System.out.println("1.Compress");
         System.out.println("2.Decompress");
         System.out.println("Enter the operation you want to perform!");
-        Scanner Scan1 = new Scanner(System.in);
-        String Oper = Scan1.nextLine();
-        if(Oper.equals("Compress"))
+        Scanner scan1 = new Scanner(System.in);
+        String oper = scan1.nextLine();
+        if(oper.equals("Compress"))
         {
             System.out.println("Enter the text!");
-            Scanner Scan2 = new Scanner(System.in);
-            String text = Scan2.nextLine();
-            ArchCompr ArchC = new ArchCompr();
-            ChangeText = ArchC.Compress(text);
+            Scanner scan2 = new Scanner(System.in);
+            String text = scan2.nextLine();
+            ArchCompr archC = new ArchCompr();
+            ChangeText = archC.Compress(text);
         }
         else
-            if(Oper.equals("Decompress"))
+            if(oper.equals("Decompress"))
             {
                 System.out.println("Enter the text!");
-                Scanner Scan2 = new Scanner(System.in);
-                String text = Scan2.nextLine();
-                ArchDecompr ArchD = new ArchDecompr();
-                ChangeText = ArchD.Decompress(text);
+                Scanner scan2 = new Scanner(System.in);
+                String text = scan2.nextLine();
+                ArchDecompr archD = new ArchDecompr();
+                ChangeText = archD.Decompress(text);
             }
             else
             {

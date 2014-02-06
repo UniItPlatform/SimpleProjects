@@ -6,13 +6,13 @@ public class ArchivatorTest {
         String text = "qqqwerrtyyyrttt";
         System.out.println(text);
         System.out.println("Compress");
-        ArchComprTest ArchCTest = new ArchComprTest();
-        System.out.println(ArchCTest.CompressTest(text));
+        ArchComprTest archCTest = new ArchComprTest();
+        System.out.println(archCTest.CompressTest(text));
         System.out.println();
         text = "4rt7eyr3i11d";
         System.out.println(text);
         System.out.println("Decompress");
-        ArchDecomprTest ArchDTest = new ArchDecomprTest();
-        System.out.println(ArchDTest.DecompressTest(text));
+        ArchDecomprTest archDTest = new ArchDecomprTest();
+        System.out.println(archDTest.DecompressTest(text));
     }
 }

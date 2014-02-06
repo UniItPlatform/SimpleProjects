@@ -1,48 +1,48 @@
 public class ArchComprTest {
     /**
      * Compress method. If is found the same symbols in a row, the number of records and symbol
-     * @param ComprText  text which should be compressed
+     * @param comprText  text which should be compressed
      * @return compressed text
      */
-    public String CompressTest(String ComprText)
+    public String CompressTest(String comprText)
     {
-        int NumRepeat = 1;
-        boolean RepChar = false;
-        char ch,PrevCh;
-        String DecomprText = "";
-        if (ComprText.length()>1)
+        int numRepeat = 1;
+        boolean repChar = false;
+        char ch,prevCh;
+        String decomprText = "";
+        if (comprText.length()>1)
         {
             int i;
-            for (i=1;i<ComprText.length();i++)
+            for (i=1;i<comprText.length();i++)
             {
-                PrevCh = ComprText.charAt(i-1);
-                ch = ComprText.charAt(i);
-                if (ch==PrevCh)
+                prevCh = comprText.charAt(i-1);
+                ch = comprText.charAt(i);
+                if (ch==prevCh)
                 {
-                    NumRepeat++;
-                    RepChar = true;
+                    numRepeat++;
+                    repChar = true;
                 }
                 else
                 {
-                    if (RepChar)
+                    if (repChar)
                     {
-                        DecomprText = DecomprText + NumRepeat + PrevCh;
-                        NumRepeat = 1;
-                        RepChar = false;
+                        decomprText = decomprText + numRepeat + prevCh;
+                        numRepeat = 1;
+                        repChar = false;
                     }
                     else
                     {
-                        DecomprText = DecomprText + PrevCh;
+                        decomprText = decomprText + prevCh;
                     }
                 }
             }
-            if (RepChar)
-                DecomprText = DecomprText + NumRepeat + ComprText.charAt(i-1);
+            if (repChar)
+                decomprText = decomprText + numRepeat + comprText.charAt(i-1);
             else
-                DecomprText = DecomprText + ComprText.charAt(i-1);
+                decomprText = decomprText + comprText.charAt(i-1);
         }
         else
-            DecomprText = DecomprText + ComprText;
-        return DecomprText;
+            decomprText = decomprText + comprText;
+        return decomprText;
     }
 }

@@ -11,21 +11,21 @@ public class Fill {
     {
         if (pat.charAt(0)>256)
         {
-            int TransRusAlph=864;
-            dfa[pat.charAt(0)-TransRusAlph][0]=1;
-            for(int NumRepeat=0,j=1;j<pat.length();j++)
+            int transRusAlph=864;
+            dfa[pat.charAt(0)-transRusAlph][0]=1;
+            for(int numRepeat=0,j=1;j<pat.length();j++)
             {
-                dfa[pat.charAt(j)-TransRusAlph][j]=j+1;
-                NumRepeat=dfa[pat.charAt(j)-TransRusAlph][NumRepeat];
+                dfa[pat.charAt(j)-transRusAlph][j]=j+1;
+                numRepeat=dfa[pat.charAt(j)-transRusAlph][numRepeat];
             }
         }
         else
         {
             dfa[pat.charAt(0)][0]=1;
-            for(int NumRepeat=0,j=1;j<pat.length();j++)
+            for(int numRepeat=0,j=1;j<pat.length();j++)
             {
                 dfa[pat.charAt(j)][j]=j+1;
-                NumRepeat=dfa[pat.charAt(j)][NumRepeat];
+                numRepeat=dfa[pat.charAt(j)][numRepeat];
             }
         }
     }

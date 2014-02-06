@@ -9,26 +9,26 @@ public class Search {
      */
     public int[] show(String txt,String pat,int [][]dfa)
     {
-        int NumRepeat=0;
+        int numRepeat=0;
         int []lg=new int[txt.length()];
         for(int i=0;i<txt.length();i++)
         {
             if (txt.charAt(i)>256)
             {
-                NumRepeat=dfa[txt.charAt(i)-864][NumRepeat];
-                if(NumRepeat==pat.length())
+                numRepeat=dfa[txt.charAt(i)-864][numRepeat];
+                if(numRepeat==pat.length())
                 {
-                    lg[i-NumRepeat+1]=1;
-                    NumRepeat=0;
+                    lg[i-numRepeat+1]=1;
+                    numRepeat=0;
                 }
             }
             else
             {
-                NumRepeat=dfa[txt.charAt(i)][NumRepeat];
-                if(NumRepeat==pat.length())
+                numRepeat=dfa[txt.charAt(i)][numRepeat];
+                if(numRepeat==pat.length())
                 {
-                    lg[i-NumRepeat+1]=1;
-                    NumRepeat=0;
+                    lg[i-numRepeat+1]=1;
+                    numRepeat=0;
                 }
             }
         }
